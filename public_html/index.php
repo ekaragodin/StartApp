@@ -1,13 +1,6 @@
 <?php
 
-// todo: определение продакшен и девелопмент хостов
-// todo: слияние локального конфига
-// todo: научить миграцию вносить изменения в тестовую бд
-// todo: добавить экстеншен MaintenanceMode
-// todo: добавить дебаг тулбар
-
-// change the following paths if necessary
-$config = include(dirname(__FILE__) . '/../application/config/main.php');
+$config = include(dirname(__FILE__) . '/../application/config/web.php');
 if (YII_DEBUG) {
     require_once(dirname(__FILE__) . '/../yii/framework/YiiBase.php');
 
@@ -15,7 +8,7 @@ if (YII_DEBUG) {
     {
         /**
          * @static
-         * @return MyWebApplication
+         * @return WebApplication
          */
         public static function app()
         {
@@ -28,6 +21,6 @@ if (YII_DEBUG) {
 
 Yii::createWebApplication($config)->run();
 
-class MyWebApplication extends CWebApplication
+class WebApplication extends CWebApplication
 {}
 
