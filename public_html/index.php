@@ -1,13 +1,33 @@
 <?php
 
+// todo: определение продакшен и девелопмент хостов
+// todo: слияние локального конфига
+// todo: научить миграцию вносить изменения в тестовую бд
+// todo: добавить экстеншен MaintenanceMode
+// todo: добавить дебаг тулбар
+
 // change the following paths if necessary
-$yii=dirname(__FILE__).'/../yii/framework/yii.php';
-$config=dirname(__FILE__).'/../application/config/main.php';
+$config = include(dirname(__FILE__) . '/../application/config/main.php');
+if (YII_DEBUG) {
+    require_once(dirname(__FILE__) . '/../yii/framework/YiiBase.php');
 
-// remove the following lines when in production mode
-defined('YII_DEBUG') or define('YII_DEBUG',true);
-// specify how many levels of call stack should be shown in each log message
-defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
+    class Yii extends YiiBase
+    {
+        /**
+         * @static
+         * @return MyWebApplication
+         */
+        public static function app()
+        {
+            return parent::app();
+        }
+    }
+} else {
+    require_once(dirname(__FILE__) . '/../yii/framework/yiilite.php');
+}
 
-require_once($yii);
 Yii::createWebApplication($config)->run();
+
+class MyWebApplication extends CWebApplication
+{}
+
