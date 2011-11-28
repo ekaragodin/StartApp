@@ -1,12 +1,12 @@
 <?php
-
 $productionHosts = array();
 
-if (in_array($_SERVER['HTTP_HOST'], $productionHosts)) {
+if (isset($_SERVER['HTTP_HOST']) && in_array($_SERVER['HTTP_HOST'], $productionHosts)) {
+    defined('YII_DEBUG') or define('YII_DEBUG', false);
+    defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL', 1);
+} else {
     defined('YII_DEBUG') or define('YII_DEBUG', true);
     defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL', 3);
-} else {
-    defined('YII_DEBUG') or define('YII_DEBUG', false);
 }
 
 // This is the main Web application configuration. Any writable
@@ -43,20 +43,11 @@ $config = array(
                     'class' => 'CFileLogRoute',
                     'levels' => 'error, warning',
                 ),
-                // uncomment the following to show log messages on web pages
-                /*
-                    array(
-                        'class'=>'CWebLogRoute',
-                    ),
-                    */
             ),
         ),
     ),
 
     // application-level parameters that can be accessed
     // using Yii::app()->params['paramName']
-    'params' => array(
-        // this is used in contact page
-        'adminEmail' => 'webmaster@example.com',
-    ),
+    'params' => include(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'params.php'),
 );

@@ -8,5 +8,9 @@ $config['modules']['gii'] = array(
     'ipFilters' => array('127.0.0.1', '::1'),
 );
 
-$config['components']['db']['user'] = 'root';
+$config['components']['log']['routes'][] = array(
+    'class'=>'CWebLogRoute',
+);
+
+$config['components']['db']['username'] = 'root';
 $config['components']['db']['password'] = '';

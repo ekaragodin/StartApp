@@ -1,14 +1,14 @@
 <?php
 
-include(__DIR__ . '/main.php');
+include(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'main.php');
 
 $config['name'] = 'My Console Application';
 $config['components']['db']['connectionString'] = 'mysql:host=localhost;dbname=testdrive';
-$config['components']['db']['user'] = 'root';
+$config['components']['db']['username'] = 'root';
 $config['components']['db']['password'] = '';
 
-if (is_file(__DIR__ . '/local.php')) {
-    include(__DIR__ . '/local.php');
+if (is_file(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'local.php')) {
+    include(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'local.php');
 }
 
 return $config;

@@ -1,14 +1,14 @@
 <?php
 
-include(__DIR__ . '/main.php');
+include(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'main.php');
 
 $config['components']['fixture']['class'] = 'system.test.CDbFixtureManager';
 // uncomment the following to provide test database connection
 // $config['components']['db']['connectionString'] = 'DSN for test database';
 
 
-if (is_file(__DIR__ . '/local.php')) {
-    include(__DIR__ . '/local.php');
+if (is_file(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'local.php')) {
+    include(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'local.php');
 }
 
 return $config;
