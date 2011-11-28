@@ -17,9 +17,12 @@ Autocompletion in IDE
 Чтобы получить хороший автокомплит для метода Yii::app(), настройте свою IDE так чтобы
 она игнорировалала файлы yii.php и yiilite.php из папки yii/framework.
 
+Installed extensions
+--------------------
+1. [yii-debug-toolbar](http://www.yiiframework.com/extension/yii-debug-toolbar/)
+
 TODO
 ----
 + добавить экстеншен для автокомплита консольных команд
 + добавить экстеншен MaintenanceMode
-+ добавить дебаг тулбар
 + научить миграцию вносить изменения в тестовую бд

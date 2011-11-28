@@ -12,5 +12,9 @@ $config['components']['log']['routes'][] = array(
     'class'=>'CWebLogRoute',
 );
 
+$config['components']['log']['routes'][] = array(
+    'class' => 'ext.yii-debug-toolbar.yii-debug-toolbar.YiiDebugToolbarRoute',
+);
+
 $config['components']['db']['username'] = 'root';
 $config['components']['db']['password'] = '';
