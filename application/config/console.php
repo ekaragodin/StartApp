@@ -7,8 +7,6 @@ $config['components']['db']['connectionString'] = 'mysql:host=localhost;dbname=t
 $config['components']['db']['username'] = 'root';
 $config['components']['db']['password'] = '';
 
-if (is_file(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'local.php')) {
-    include(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'local.php');
-}
+loadLocalConfig(__FILE__);
 
 return $config;

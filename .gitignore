@@ -1,2 +1,3 @@
 .idea
 application/config/local*.php
+application/runtime

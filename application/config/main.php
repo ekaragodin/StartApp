@@ -51,3 +51,16 @@ $config = array(
     // using Yii::app()->params['paramName']
     'params' => include(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'params.php'),
 );
+
+/**
+ * Load local config if exist
+ * @param $currentConfig full file name
+ */
+function loadLocalConfig($currentConfig) {
+    $localConfig = dirname($currentConfig) . DIRECTORY_SEPARATOR .
+            'local_' . pathinfo($currentConfig, PATHINFO_BASENAME);
+    if (is_file($localConfig)) {
+        global $config;
+        include($localConfig);
+    }
+}
