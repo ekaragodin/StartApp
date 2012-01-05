@@ -24,8 +24,3 @@ Installed extensions
 --------------------
 1. [yii-debug-toolbar](http://www.yiiframework.com/extension/yii-debug-toolbar/)
 
-TODO
-----
-+ добавить экстеншен для автокомплита консольных команд
-+ добавить экстеншен MaintenanceMode
-+ научить миграцию вносить изменения в тестовую бд

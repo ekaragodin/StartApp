@@ -1,3 +1,4 @@
 .idea
 application/config/local*.php
 application/runtime
+public_html/assets
