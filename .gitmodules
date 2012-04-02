@@ -1,6 +1,6 @@
-[submodule "yii"]
-	path = yii
-	url = https://github.com/yiiext/yii.git
 [submodule "application/extensions/yii-debug-toolbar"]
 	path = application/extensions/yii-debug-toolbar
 	url = https://github.com/malyshev/yii-debug-toolbar.git
+[submodule "application/extensions/maintenance"]
+	path = application/extensions/maintenance
+	url = git@github.com:karagodin/MaintenanceMode.git
