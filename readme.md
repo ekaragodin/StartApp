@@ -5,7 +5,7 @@ Install
 -------
     git clone git@github.com:karagodin/StartApp.git
     cd StartApp
-    git submodule update
+    git submodule update --init
 
 Configs
 -------
